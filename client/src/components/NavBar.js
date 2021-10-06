@@ -25,9 +25,12 @@ export default function NavBar(props) {
                         <p>Logout</p>
                     </Link>
                     {path !== '/songs/add' &&
-                    <Link to='/songs/add'>
-                        <p>Upload Song</p>
-                    </Link>}
+                        <Link to='/songs/add'>
+                            <p>Upload Song</p>
+                        </Link>}
+                    <Link to='/mysongs'>
+                        <p>My songs</p>
+                    </Link>
                 </>
             ) : (
                 <>

@@ -9,6 +9,7 @@ import Signup from "./components/Signup";
 import { useState } from 'react'
 import Login from "./components/Login";
 import { useHistory } from "react-router";
+import MySongs from "./components/MySongs";
 
 function App(props) {
 
@@ -31,16 +32,18 @@ function App(props) {
       <Switch>
         <Route exact path={PATHS.HOMEPAGE} component={SongsList} />
         <Route exact path="/songs/add"
-          render={user ?  props => <AddSong user={user} setUser={setUser} /> : redirectToLogin()
-            } />
-           <Route exact path="/songs/:id"
-          render={user ?  props => <SongDetails user={user}{...props} /> : props => <SongDetails user={null}{...props} />
-            } />
+          render={user ? props => <AddSong user={user} setUser={setUser} /> : redirectToLogin()
+          } />
+        <Route exact path="/songs/:id"
+          render={user ? props => <SongDetails user={user}{...props} /> : props => <SongDetails user={null}{...props} />
+          } />
 
         <Route exact path="/signup"
           render={props => <Signup setUser={addUser}{...props} />} />
         <Route exact path="/login"
           render={props => <Login setUser={addUser}{...props} />} />
+        <Route exact path="/mysongs"
+          render={props => <MySongs user={user} setUser={setUser} />} />
       </Switch>
     </div>
   );

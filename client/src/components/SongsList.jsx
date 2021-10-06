@@ -34,7 +34,6 @@ function SongsList(props) {
     getAllSongs()
   }, [])
   
-  
   let words = search.split(' ')
   
   function searchCheck (search, word) {

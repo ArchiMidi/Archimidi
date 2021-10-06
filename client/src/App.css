@@ -12,7 +12,7 @@
   justify-content:flex-end;
   align-items: center;
   flex-direction: row;
-  background-color: blue;
+  background-color:rgba(26, 91, 91, 0.714);
   border:1px black solid;
   border-radius:2px;
 
@@ -64,7 +64,7 @@ input[type=search] {
 	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
 	border: solid 1px #ccc;
 	padding: 9px 10px 9px 32px;
-	width: 55px;
+	/* width: 55px; */
 	
 	-webkit-border-radius: 10em;
 	-moz-border-radius: 10em;
@@ -75,13 +75,13 @@ input[type=search] {
 	transition: all .5s;
 }
 input[type=search]:focus {
-	width: 200px;
+	/* width: 200px; */
 	background-color: #fff;
 	border-color: #66a2cc;
-	
+/* 	
 	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
 	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
-	box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5); */
 }
 
 
@@ -96,7 +96,6 @@ input::-webkit-input-placeholder {
 
 
 .Link{
-
   text-decoration: none;
   color:black;
 }
@@ -112,9 +111,9 @@ input::-webkit-input-placeholder {
 
 .songCard{
 
-  background-color: rgb(185, 221, 255);
+  background-color: rgb(255, 240, 255);
   color:black;
-  margin:40px;
+  margin:2em;
   width:300px;
   padding:20px;
   border:0.5px black solid;

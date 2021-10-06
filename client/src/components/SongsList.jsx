@@ -43,7 +43,7 @@ function SongsList(props) {
 
 
 
-  const filteredUsers = allSongs.filter(song => {
+  const filteredSongs = allSongs.filter(song => {
 
     if (searchFields.title === true && searchFields.author === true) {
       return ((Regx1.test(song.title) || Regx2.test(song.title)) || (Regx1.test(song.author) || Regx2.test(song.author)))
@@ -86,7 +86,7 @@ function SongsList(props) {
         onChange={e => setSearchFields({ ...searchFields, author: e.target.checked })} />
     </label>
     {/* {songsList} */}
-    {filteredUsers.map(song => <SongCard key={song._id} {...song} />)}
+    {filteredSongs.map(song => <SongCard key={song._id} {...song} />)}
   </>
   );
 }

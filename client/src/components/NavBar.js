@@ -13,36 +13,36 @@ export default function NavBar(props) {
     }
 
     return (
-        <nav>
+        <nav className='navBar'>
             {props.user ? (
                 <>
                     {path !== '/' &&
                         <Link to='/'>
-                            <p>Home</p>
+                            <p className='navElements'>Home</p>
                         </Link>
                     }
                     <Link to="/" onClick={() => handleLogout()}>
-                        <p>Logout</p>
+                        <p className='navElements'>Logout</p>
                     </Link>
                     {path !== '/songs/add' &&
                         <Link to='/songs/add'>
-                            <p>Upload Song</p>
+                            <p className='navElements'>Upload Song</p>
                         </Link>}
                     <Link to='/mysongs'>
-                        <p>My songs</p>
+                        <p className='navElements'>My songs</p>
                     </Link>
                 </>
             ) : (
                 <>
                     {path !== '/' &&
                         <Link to='/'>
-                            <p>Home</p>
+                            <p className='navElements'>Home</p>
                         </Link>
                     }
                     {path === '/login' && <p>don't have an account?</p>}
                     {path !== '/signup' && <>
                         <Link to='/signup'>
-                            <p>Sign up</p>
+                            <p className='navElements'>Sign up</p>
                         </Link>
                     </>
                     }
@@ -51,7 +51,7 @@ export default function NavBar(props) {
                     {path !== '/login' &&
                         <>
                             <Link to='/login'>
-                                <p>Log in</p>
+                                <p className='navElements'>Log in</p>
                             </Link>
                         </>
                     }

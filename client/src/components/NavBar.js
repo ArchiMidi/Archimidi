@@ -24,9 +24,10 @@ export default function NavBar(props) {
                     <Link to="/" onClick={() => handleLogout()}>
                         <p>Logout</p>
                     </Link>
+                    {path !== '/songs/add' &&
                     <Link to='/songs/add'>
                         <p>Upload Song</p>
-                    </Link>
+                    </Link>}
                 </>
             ) : (
                 <>

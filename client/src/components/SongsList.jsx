@@ -86,7 +86,9 @@ function SongsList(props) {
         onChange={e => setSearchFields({ ...searchFields, author: e.target.checked })} />
     </label>
     {/* {songsList} */}
-    {filteredSongs.map(song => <SongCard key={song._id} {...song} />)}
+    <div className='songsListContainer'>
+      {filteredSongs.map(song => <SongCard className='songCard' key={song._id} {...song} />)}
+    </div>
   </>
   );
 }

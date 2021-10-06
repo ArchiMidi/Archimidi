@@ -5,7 +5,7 @@ export default function SongCard({ title, _id, songUrl, author }) {
     // console.log(title)
 
     return (
-        <div>
+        <div className='songCard'>
             <Link className="Link" to={`/songs/${_id}`}>
                 <h3>{title}</h3>
             </Link>

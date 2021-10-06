@@ -32,7 +32,7 @@ export default function MySongs(props) {
     //comment
 
     return (
-        <div>
+        <div className='songsListContainer'>
             <h3>My Songs</h3>
             {filteredSongs.length >= 1 ? (
                 <>

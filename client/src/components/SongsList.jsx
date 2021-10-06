@@ -65,7 +65,7 @@ function SongsList(props) {
   return (<>
     <h1>List of Songs</h1>
     <div className="filter">
-      <label>Search by title or author: </label>
+      <label>Search: </label>
       <input type="text" name="search" value={search} onChange={e => setSearch(e.target.value)} />
     </div>
     <label>

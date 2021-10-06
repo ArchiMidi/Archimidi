@@ -37,9 +37,13 @@ function SongsList(props) {
   
   let words = search.split(' ')
   
-  function regXCheck (search, word) {
-    const Regx1 = new RegExp(search, 'i');
-    return Regx1.test(word);
+  function searchCheck (search, word) {
+    for (let i = 0; i <= word.length; i++){
+      if (word.substring(i, i+search.length).toLowerCase() === search.toLowerCase()){
+        return true
+      } 
+    }
+    return false
   }
   
   const filteredSongs = allSongs.filter(song => {
@@ -50,21 +54,21 @@ function SongsList(props) {
     for (let word of words){
       if (searchFields.title === true){
         for (let str of title){
-          if (regXCheck(word, str)) {
+          if (searchCheck(word, str)) {
             return true;
           }
         }
       }
       if (searchFields.author === true){
         for (let str of author){
-          if (regXCheck(word, str)) {
+          if (searchCheck(word, str)) {
             return true;
           }
         }
       }
       if (searchFields.tags === true){
       for (let str of tags){
-        if (regXCheck(word, str)) {
+        if (searchCheck(word, str)) {
           return true;
         }
       }
@@ -111,7 +115,7 @@ function SongsList(props) {
     <br />
     {/* {songsList} */}
     <div className='songsListContainer'>
-    {filteredSongs.map(song => <SongCard className='songCard' key={song._id} {...song} />)}
+    {filteredSongs.length > 0 ? filteredSongs.map(song => <SongCard className='songCard' key={song._id} {...song} />) : <p>No songs match your research</p>}
     </div>
     </>
     );

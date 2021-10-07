@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color: azure;
+  font-size: large;
 
 }
 
@@ -26,10 +27,14 @@
   color:antiquewhite;
 }
 
-
 a{
 
   text-decoration: none;
+  color:rgb(46, 99, 145)
+}
+a:hover{
+
+  color:rgb(0, 111, 111)
 }
 
 .searchBar{
@@ -41,7 +46,6 @@ a{
     outline: 0;
     background-color: #f5f5f5;
     margin-bottom:20px;
-   
   
 }
 
@@ -133,4 +137,21 @@ input::-webkit-input-placeholder {
   flex-direction: row;
   flex-wrap: wrap;
 
+}
+
+.loginForm{
+
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+}
+
+.loginForm input{
+
+
+  height:25px;
+  width:270px;
+  font-size: large;
+  margin:25px;
 }

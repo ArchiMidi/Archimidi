@@ -12,7 +12,7 @@ import { useHistory } from "react-router";
 import MySongs from "./components/MySongs";
 
 function App(props) {
-
+  const [search, setSearch] = useState(props.search);
   const [user, setUser] = useState(props.user)
   const history = useHistory()
   const addUser = user => {
@@ -21,15 +21,15 @@ function App(props) {
 
   const redirectToLogin = () => history.push(`/login`)
   // console.log('App.js user is :', user)
-
-  console.log('user in app.js', user)
+  // console.log('user in app.js', user)
 
   return (
     <div className="App">
-      <NavBar user={user} setUser={setUser} currentPage={props}></NavBar>
+      <NavBar user={user} setUser={setUser} search={search} setSearch={setSearch} currentPage={props}></NavBar>
       <h1>ArchiMIDIs</h1>
       <Switch>
-        <Route exact path={PATHS.HOMEPAGE} component={SongsList} />
+        <Route exact path={PATHS.HOMEPAGE}
+        render={props => <SongsList search={search} setSearch={setSearch}/> } />
         <Route exact path="/songs/add"
           render={user ? props => <AddSong user={user} setUser={setUser} /> : redirectToLogin()
           } />

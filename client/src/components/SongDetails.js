@@ -78,9 +78,9 @@ export default function SongDetails(props) {
         <div>
             {song && (
                 <div>
-                    <h1>{song.title}</h1>
+                    <h2>{song.title}</h2>
                     <h3>{song.author}</h3>
-                    <p>{song.songUrl}</p>
+                    
                     <a href={song.songUrl} download={`${song.title}_${song.author}.mid`}>Download</a>
                     {(currentUserId === song.createdBy) && <button onClick={() => deleteSong(song._id)}>Delete {song.title}</button>}
 

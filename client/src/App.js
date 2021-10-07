@@ -10,6 +10,7 @@ import { useState } from 'react'
 import Login from "./components/Login";
 import { useHistory } from "react-router";
 import MySongs from "./components/MySongs";
+import EditSong from "./components/EditSong";
 
 function App(props) {
 
@@ -43,6 +44,7 @@ function App(props) {
           render={props => <Login setUser={addUser}{...props} />} />
         <Route exact path="/mysongs"
           render={props => <MySongs user={user} setUser={setUser} />} />
+        <Route exact path="/songs/edit/:id" component={EditSong} />
       </Switch>
     </div>
   );

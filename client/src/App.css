@@ -48,8 +48,8 @@ input{
 
 .navBar p {
   text-decoration: none;
-  padding-left: 1em;
-  padding-right:1em;
+  padding-left: 9px;
+  padding-right:9px;
 }
 
 .navBar a:hover {
@@ -132,4 +132,37 @@ input[type='password']:focus {
   /* width: 200px; */
   background-color: #fff;
   border: solid 1px crimson;
+}
+
+.baseForm{
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+}
+
+.baseForm button{
+  padding: 9px 10px 9px 32px;
+  /* box-sizing: border-box; */
+  border: 0px;
+  font-size: 1em;
+  margin: 0px;
+  outline: none;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+}
+
+.tagsBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.tagsBox > p{
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  background-color: mediumvioletred;
+  color:moccasin;
 }

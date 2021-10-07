@@ -9,8 +9,10 @@ export default function SongCard({ title, _id, songUrl, author, tags }) {
             <Link className="Link" to={`/songs/${_id}`}>
                 <h3>{title}</h3>
                 <h4>{author}</h4>
-                {tags && tags.map(tag => <p>{tag}</p>)}
             </Link>
+                <div className='tagsBox'>
+                {tags && tags.map(tag => <p>{tag}</p>)}
+                </div>
             <a href={songUrl} download={`${title}_${author}.mid`}>Download</a>
         </div>
     )

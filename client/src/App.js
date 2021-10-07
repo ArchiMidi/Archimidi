@@ -11,6 +11,7 @@ import Login from "./components/Login";
 import { useHistory } from "react-router";
 import MySongs from "./components/MySongs";
 import EditSong from "./components/EditSong";
+import { Link } from "react-router-dom";
 
 
 function App(props) {
@@ -21,7 +22,10 @@ function App(props) {
     setUser(user);
   }
 
-  const redirectToLogin = () => history.push(`/login/bob`)
+  function NotFound() {
+
+    return (<><h1>404 - Not Found</h1>  <Link to='/'>Return home</Link></>)
+  }
 
 
   return (
@@ -46,6 +50,7 @@ function App(props) {
         <Route exact path="/mysongs"
           render={props => <MySongs user={user} setUser={setUser} />} />
         <Route exact path="/songs/edit/:id" component={EditSong} />
+        <Route component={NotFound} />
       </Switch>
     </div>
   );

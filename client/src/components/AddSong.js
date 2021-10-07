@@ -87,8 +87,13 @@ function AddSong(props) {
     return () => {
       setTagToRemove(null)
     }
-  }, [tags, tagToRemove])
+  }, [tagToRemove, tags])
 
+  const handleDeleteTag = e => {
+    e.preventDefault()
+    setTagToRemove(e.target.tagButton.value)
+  }
+  
   return (
     <div className='addSongContainer'>
       <h2>New Song</h2>
@@ -120,11 +125,8 @@ function AddSong(props) {
       {tags.map(tag =>
         <>
           <p>{tag}</p>
-          <form onSubmit={
-
-            tag => setTagToRemove(tag)
-          }>
-            <button type="submit">x</button>
+          <form onSubmit={handleDeleteTag} >
+            <button name='tagButton' type="submit" value={tag} >x</button>
           </form>
         </>
       )}

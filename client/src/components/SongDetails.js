@@ -34,6 +34,7 @@ export default function SongDetails(props) {
                 .getSong(id)
             setSong(response)
         } catch (err) {
+            history.push('/404')
             return console.log(err)
         }
     }

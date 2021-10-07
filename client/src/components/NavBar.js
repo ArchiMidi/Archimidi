@@ -3,6 +3,7 @@ import { useHistory } from "react-router";
 import service from '../api/service'
 
 export default function NavBar(props) {
+
   // console.log('logged in user is >>>>>>>>>>>>>>>>>>>>>>>>>>>', props.user)
   const path = useLocation().pathname
   const history = useHistory()

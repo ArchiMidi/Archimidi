@@ -11,6 +11,7 @@ import Login from "./components/Login";
 import { useHistory } from "react-router";
 import MySongs from "./components/MySongs";
 import EditSong from "./components/EditSong";
+import { Link } from "react-router-dom";
 
 
 function App(props) {
@@ -21,8 +22,12 @@ function App(props) {
     setUser(user);
   }
 
-  // console.log('App.js user is :', user)
-  // console.log('user in app.js', user)
+
+  function NotFound() {
+
+    return (<><h1>404 - Not Found</h1>  <Link to='/'>Return home</Link></>)
+  }
+
 
   return (
     <div className="App">
@@ -31,7 +36,7 @@ function App(props) {
       <h1>ArchiMIDIs</h1>
       <Switch>
         <Route exact path={PATHS.HOMEPAGE}
-        render={props => <SongsList search={search} setSearch={setSearch}/> } />
+          render={props => <SongsList search={search} setSearch={setSearch} />} />
         <Route exact path="/songs/add"
           render={user ? props => <AddSong user={user} setUser={setUser} /> : props => <Login setUser={addUser}{...props} />
           } />
@@ -46,6 +51,7 @@ function App(props) {
         <Route exact path="/mysongs"
           render={props => <MySongs user={user} setUser={setUser} />} />
         <Route exact path="/songs/edit/:id" component={EditSong} />
+        <Route component={NotFound} />
       </Switch>
     </div>
   );

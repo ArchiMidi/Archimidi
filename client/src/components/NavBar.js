@@ -31,7 +31,7 @@ export default function NavBar(props) {
     <nav className='navBar'>
       <div className='leftNav'>
         <Link to='/'>
-          <p>Home</p>
+          <p>ArchiMIDI</p>
         </Link>
       {searchBar}
       </div>

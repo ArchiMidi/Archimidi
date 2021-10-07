@@ -33,7 +33,7 @@ function App(props) {
     <div className="App">
 
       <NavBar user={user} setUser={setUser} search={search} setSearch={setSearch} currentPage={props}></NavBar>
-      <h1>ArchiMIDIs</h1>
+      
       <Switch>
         <Route exact path={PATHS.HOMEPAGE}
           render={props => <SongsList search={search} setSearch={setSearch} />} />

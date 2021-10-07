@@ -118,9 +118,8 @@ input::-webkit-input-placeholder {
   padding:20px;
   border:0.5px black solid;
   border-radius: 3px;
-  height:100px;
-
-  
+  height:fit-content;
+  line-height: 1em;
 
 }
 

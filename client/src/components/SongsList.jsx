@@ -76,11 +76,10 @@ function SongsList(props) {
   // const songsList = allSongs.map(song => <div key={song._id}><h1>{song.title}</h1><a href={song.songUrl} download={`${song.title}_${song.author}.midi`}>Download</a></div>)
 
   return (<>
-    <h1>List of Songs</h1>
-    <div className="filter">
+    {/* <div className="filter">
       <label>Search: </label>
       <input className='searchBar' type="search" name="search" value={search} onChange={e => setSearch(e.target.value)} />
-    </div>
+    </div> */}
     <label>
       Search by Title
       <input

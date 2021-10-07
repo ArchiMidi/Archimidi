@@ -21,7 +21,7 @@ function App(props) {
     setUser(user);
   }
 
-  const redirectToLogin = () => history.push(`/login`)
+  const redirectToLogin = () => history.push(`/login/bob`)
   // console.log('App.js user is :', user)
   // console.log('user in app.js', user)
 
@@ -34,7 +34,7 @@ function App(props) {
         <Route exact path={PATHS.HOMEPAGE}
         render={props => <SongsList search={search} setSearch={setSearch}/> } />
         <Route exact path="/songs/add"
-          render={user ? props => <AddSong user={user} setUser={setUser} /> : redirectToLogin()
+          render={user ? props => <AddSong user={user} setUser={setUser} /> : props => <Login setUser={addUser}{...props} />
           } />
         <Route exact path="/songs/:id"
           render={user ? props => <SongDetails user={user}{...props} /> : props => <SongDetails user={null}{...props} />

@@ -81,7 +81,7 @@ input[type=search] {
 input[type=search]:focus {
 	/* width: 200px; */
 	background-color: #fff;
-	border-color: #66a2cc;
+	border-color: #66ccca;
 /* 	
 	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
 	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
@@ -95,6 +95,79 @@ input:-moz-placeholder {
 input::-webkit-input-placeholder {
 	color: #999;
 }
+
+/* here begins signup and login input styling*/
+
+input[type=text] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
+
+
+input[type=text] {
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	/* width: 55px; */
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+input[type=text]:focus {
+	/* width: 200px; */
+	background-color: #fff;
+	border-color: #66ccca;
+/* 	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5); */
+}
+
+input[type=password] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
+
+
+input[type=password] {
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	/* width: 55px; */
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+input[type=password]:focus {
+	/* width: 200px; */
+	background-color: #fff;
+	border-color: #66ccca;
+/* 	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5); */
+}
+
 
 
 
@@ -154,4 +227,43 @@ input::-webkit-input-placeholder {
   width:270px;
   font-size: large;
   margin:25px;
+
+}
+
+.signupForm{
+
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+}
+
+
+.signupForm input{
+  
+
+  height:25px;
+  width:270px;
+  font-size: large;
+  margin:25px;
+
+}
+
+
+button:hover {
+	/* width: 200px; */
+	background-color: #fff;
+	border-color: #66ccca;
+/* 	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5); */
+}
+
+
+button{
+
+  width:100px;
+  height:50px;
+  border-radius: 10px;
 }

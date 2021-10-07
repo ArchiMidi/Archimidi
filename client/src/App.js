@@ -29,7 +29,7 @@ function App(props) {
   return (
     <div className="App">
       <NavBar user={user} setUser={setUser} currentPage={props}></NavBar>
-      <img src='../public/images/Archimidi-logos_black.png' alt='logo'></img>
+      <h1>Archimidis</h1>
       <Switch>
         <Route exact path={PATHS.HOMEPAGE} component={SongsList} />
         <Route exact path="/songs/add"

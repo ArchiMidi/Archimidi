@@ -111,6 +111,7 @@ input::-webkit-search-cancel-button {
 
 
 input[type=text] {
+  background-color: #ededed;
 	border: solid 1px #ccc;
 	padding: 9px 10px 9px 32px;
 	/* width: 55px; */
@@ -266,4 +267,47 @@ button{
   width:100px;
   height:50px;
   border-radius: 10px;
+}
+
+.addSongForm{
+
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+
+
+}
+
+
+.addSongContainer{
+
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+
+}
+
+
+.addSongForm input{
+
+  height:25px;
+  width:270px;
+  font-size: large;
+  margin:25px;
+}
+
+
+.uploadFileInput{
+
+  border: 1px black solid;
+  background-color: rgb(210, 210, 210);
+  margin-bottom:20px;
+}
+
+.uploadFileInput button{
+
+  width:200px;
+  margin-bottom:20px;
 }

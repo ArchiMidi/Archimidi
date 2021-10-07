@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React from 'react'
 
 export default function SongCard({ title, _id, songUrl, author, tags }) {
-    // console.log(title)
+
 
     return (
         <div className='songCard'>

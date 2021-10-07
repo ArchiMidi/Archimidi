@@ -21,7 +21,7 @@ function AddSong(props) {
 
   // ******** this method handles just the file upload ********
   const handleFileUpload = e => {
-    console.log("The file to be uploaded is: ", e.target.files[0]);
+    // console.log("The file to be uploaded is: ", e.target.files[0]);
     setUploadStage(1)
     const uploadData = new FormData();
 
@@ -49,7 +49,7 @@ function AddSong(props) {
       .then(res => {
         console.log('added new song: ', res);
         history.push(`/songs/${res._id}`)
-        // here you would redirect to some other pagess
+
       })
       .catch(err => console.log('Error while adding the new song: ', err));
   };
@@ -121,7 +121,7 @@ function AddSong(props) {
         </div>
       </form>
 
-      
+
       {tags.length < 5 &&
         <form onSubmit={HandleTagSubmit} className='addSongForm'>
           <label>
@@ -129,7 +129,7 @@ function AddSong(props) {
           </label>
           <input type="text" name="tag" value={tag} onChange={e => setTag(e.target.value)} />
           <button type="submit">Add Tag</button>
-        </form> }
+        </form>}
 
       {message && <p>{message}</p>}
 

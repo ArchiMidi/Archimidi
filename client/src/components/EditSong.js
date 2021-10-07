@@ -9,7 +9,7 @@ export default function EditSong(props) {
     const [author, setAuthor] = useState('')
 
     const songId = props.match.params.id;
-    console.log(songId);
+    // console.log(songId);
 
     const getSong = () => {
         axios.get(`/api/songs/${songId}`)

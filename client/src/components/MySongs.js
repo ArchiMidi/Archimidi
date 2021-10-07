@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 export default function MySongs(props) {
 
-    console.log('My songs user is', props.user)
+    // console.log('My songs user is', props.user)
 
     const [allSongs, setAllSongs] = useState([])
 
@@ -29,7 +29,7 @@ export default function MySongs(props) {
 
     // console.log('filtered songs are', filteredSongs)
     // console.log('MySongs user is ', props.user)
-    //comment
+
 
     return (
         <>

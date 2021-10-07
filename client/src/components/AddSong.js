@@ -43,7 +43,7 @@ function AddSong(props) {
   // this method submits the form
   const handleSubmit = e => {
     e.preventDefault();
-    if (title.length > 0){
+    if (title.length > 0) {
       service
         .saveNewSong({ title, author, songUrl, createdBy, tags })
         .then(res => {
@@ -57,9 +57,9 @@ function AddSong(props) {
   };
 
 
-  const saveButton = <button type="submit">Save new song</button>
+  const saveButton = <button className='bottomMargin' type="submit">Save new song</button>
   const loadIcon = <p>Loading</p>
-  const waitingIcon = <p>Upload your file</p>
+  const waitingIcon = <p>Waiting for a file...</p>
 
 
   const HandleTagSubmit = e => {
@@ -107,20 +107,22 @@ function AddSong(props) {
 
 
   return (
-    <div className='addSongContainer'>
+    <div>
       <h2>New Song</h2>
       <form onSubmit={handleSubmit} className='baseForm'>
         {/* <label> Name </label> */}
         <input type="text" name="title" value={title} onChange={e => setTitle(e.target.value)} placeholder='Title' />
 
         {/* <label>Author</label> */}
-        <input type="text" name="author" value={author} onChange={e => setAuthor(e.target.value)} placeholder='Author' />
+        <input className='bottomMargin'type="text" name="author" value={author} onChange={e => setAuthor(e.target.value)} placeholder='Author' />
         <div>
-          <input type="file" className='fileUpload' onChange={handleFileUpload} />
+          <label className='fileUpload'>
+          Choose a file
+            <input type="file" onChange={handleFileUpload} />
+          </label>
           <div>{uploadStage > 1 ? saveButton : uploadStage > 0 ? loadIcon : waitingIcon}</div>
         </div>
       </form>
-
 
       {tags.length < 5 &&
 
@@ -130,8 +132,9 @@ function AddSong(props) {
 
         </form>}
 
-      {message && <p>{message}</p>}
 
+      {message && <p>{message}</p>}
+      <div className='tagsBox'>
       {tags.map(tag =>
         <>
           <p>{tag}</p>
@@ -140,6 +143,7 @@ function AddSong(props) {
           </form>
         </>
       )}
+      </div>
     </div>
   );
 }

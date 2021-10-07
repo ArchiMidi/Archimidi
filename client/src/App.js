@@ -33,26 +33,27 @@ function App(props) {
     <div className="App">
 
       <NavBar user={user} setUser={setUser} search={search} setSearch={setSearch} currentPage={props}></NavBar>
-      
-      <Switch>
-        <Route exact path={PATHS.HOMEPAGE}
-          render={props => <SongsList search={search} setSearch={setSearch} />} />
-        <Route exact path="/songs/add"
-          render={user ? props => <AddSong user={user} setUser={setUser} /> : props => <Login setUser={addUser}{...props} />
-          } />
-        <Route exact path="/songs/:id"
-          render={user ? props => <SongDetails user={user}{...props} /> : props => <SongDetails user={null}{...props} />
-          } />
+      <div className='mainContainer'>
+        <Switch>
+          <Route exact path={PATHS.HOMEPAGE}
+            render={props => <SongsList search={search} setSearch={setSearch} />} />
+          <Route exact path="/songs/add"
+            render={user ? props => <AddSong user={user} setUser={setUser} /> : props => <Login setUser={addUser}{...props} />
+            } />
+          <Route exact path="/songs/:id"
+            render={user ? props => <SongDetails user={user}{...props} /> : props => <SongDetails user={null}{...props} />
+            } />
 
-        <Route exact path="/signup"
-          render={props => <Signup setUser={addUser}{...props} />} />
-        <Route exact path="/login"
-          render={props => <Login setUser={addUser}{...props} />} />
-        <Route exact path="/mysongs"
-          render={props => <MySongs user={user} setUser={setUser} />} />
-        <Route exact path="/songs/edit/:id" component={EditSong} />
-        <Route component={NotFound} />
-      </Switch>
+          <Route exact path="/signup"
+            render={props => <Signup setUser={addUser}{...props} />} />
+          <Route exact path="/login"
+            render={props => <Login setUser={addUser}{...props} />} />
+          <Route exact path="/mysongs"
+            render={props => <MySongs user={user} setUser={setUser} />} />
+          <Route exact path="/songs/edit/:id" component={EditSong} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
     </div>
   );
 }

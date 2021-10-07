@@ -1,19 +1,18 @@
-
-*{
+* {
   font-family: "Roboto Mono", monospace !important;
 }
-@media(max-width: 1080px)
-{
-  .rightNav{
+@media (max-width: 1080px) {
+  .rightNav {
     width: 100%;
   }
-  .searchBar{
+  .searchBar {
     margin-right: 1em;
   }
 }
 
+label,
 button,
-input{
+input {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s;
@@ -41,7 +40,7 @@ input{
   /* background-color: limegreen; */
   text-decoration: none;
   padding-left: 1em;
-  padding-right:1em;
+  padding-right: 1em;
   font-size: 1.3em;
   color: antiquewhite;
 }
@@ -49,7 +48,7 @@ input{
 .navBar p {
   text-decoration: none;
   padding-left: 9px;
-  padding-right:9px;
+  padding-right: 9px;
 }
 
 .navBar a:hover {
@@ -62,13 +61,13 @@ input{
   flex-grow: 2;
   display: flex;
   margin-top: 0em;
-  
+
   /* align-items: space-between;S */
 }
 
-.searchBar input{
+.searchBar input {
   min-width: 250px;
-  width:100%;
+  width: 100%;
   flex-grow: 2;
   padding: 9px 10px 9px 32px;
   /* box-sizing: border-box; */
@@ -82,7 +81,7 @@ input{
   padding-left: 0px;  */
 }
 
-.searchBar button{
+.searchBar button {
   border: 0px;
   font-size: 1em;
   outline: 0;
@@ -90,7 +89,7 @@ input{
   padding-right: 1.2em;
 }
 
-.leftNav{
+.leftNav {
   /* background-color: magenta; */
   /* background-color: lime; */
   height: 3em;
@@ -99,12 +98,12 @@ input{
   margin: none;
   padding: none;
   border: none;
-  align-items:center;
+  align-items: center;
   justify-content: space-between;
 }
 
-.rightNav{
-  height:3em;
+.rightNav {
+  height: 3em;
   /* background-color: mediumaquamarine; */
   min-width: 30%;
   display: flex;
@@ -113,42 +112,64 @@ input{
   /* s-color: magenta; */
 }
 
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: palevioletred;
+  align-items: center;
+}
+
+.baseForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: papayawhip;
+}
+
+.baseForm button {
+  padding: 9px 10px 9px 32px;
+  /* box-sizing: border-box; */
+  border: 0px;
+  font-size: 1em;
+  margin: 1em 0em 1em;
+  outline: none;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+}
+
 form input[type="text"],
 form input[type="password"] {
-  outline:none;
+  outline: none;
   background-color: #ededed;
   border: solid 1px #ccc;
   padding: 9px 10px 9px 32px;
   /* width: 55px; */
-
+  
   -webkit-border-radius: 10em;
   -moz-border-radius: 10em;
   border-radius: §px;
-
 }
 
 input[type="text"]:focus,
-input[type='password']:focus {
+input[type="password"]:focus {
   /* width: 200px; */
   background-color: #fff;
   border: solid 1px crimson;
 }
 
-.baseForm{
-  display: flex;
-  flex-direction: column;
-  max-width: 70%;
+input[type="file"] {
+  display: none;
 }
 
-.baseForm button{
-  padding: 9px 10px 9px 32px;
-  /* box-sizing: border-box; */
-  border: 0px;
-  font-size: 1em;
-  margin: 0px;
-  outline: none;
-  padding-left: 1.2em;
-  padding-right: 1.2em;
+.fileUpload {
+  background: peachpuff;
+  padding: 9px 10px 9px 10px;
+  margin: 1em;
+}
+
+.fileUpload:hover {
+  background: plum;
+  
 }
 
 .tagsBox {
@@ -156,13 +177,33 @@ input[type='password']:focus {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-.tagsBox > p{
+.tagsBox > p {
+  max-width: 100%;
+  word-wrap:break-word;
   padding-left: 1em;
   padding-right: 1em;
   margin-left: 0.1em;
   margin-right: 0.1em;
   background-color: mediumvioletred;
-  color:moccasin;
+  color: moccasin;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+h3 {
+  color: red;
+}
+
+h4 {
+  color: palevioletred;
+}
+
+.bottomMargin {
+  margin-bottom: 18px;
 }

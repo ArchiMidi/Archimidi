@@ -43,15 +43,17 @@ function AddSong(props) {
   // this method submits the form
   const handleSubmit = e => {
     e.preventDefault();
-
-    service
-      .saveNewSong({ title, author, songUrl, createdBy, tags })
-      .then(res => {
-        console.log('added new song: ', res);
-        history.push(`/songs/${res._id}`)
-
-      })
-      .catch(err => console.log('Error while adding the new song: ', err));
+    if (title.length > 0){
+      service
+        .saveNewSong({ title, author, songUrl, createdBy, tags })
+        .then(res => {
+          console.log('added new song: ', res);
+          history.push(`/songs/${res._id}`)
+        })
+        .catch(err => console.log('Error while adding the new song: ', err));
+    } else {
+      setMessage('enter a title')
+    }
   };
 
 

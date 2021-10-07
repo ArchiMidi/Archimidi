@@ -67,6 +67,10 @@ function AddSong(props) {
       var set = [tag, ...tags].map(el => {
         return el.toLowerCase()
       }).filter((t, i, arr) => {
+        if (t === '') {
+          setMessage('cannot add an empty tag')
+          return false
+        }
         if (arr.indexOf(t) === i) return true
         else {
           setMessage(`${t} is already a tag`)
@@ -80,14 +84,25 @@ function AddSong(props) {
   }
 
   useEffect(() => {
-
     (tagToRemove !== null &&
       setTags([...tags].filter(tagChecked => tagChecked !== tagToRemove))
     )
     return () => {
       setTagToRemove(null)
     }
-  }, [tags, tagToRemove])
+  }, [tagToRemove, tags])
+
+  const handleDeleteTag = e => {
+    e.preventDefault()
+    setTagToRemove(e.target.tagButton.value)
+  }
+
+  useEffect(() => {
+    if (tags.length >= 5) {
+      setMessage('max tags number: 5')
+    }
+  }, [tags])
+
 
   return (
     <div className='addSongContainer'>
@@ -106,25 +121,23 @@ function AddSong(props) {
         </div>
       </form>
 
-      {tags.length < 5 ?
+      
+      {tags.length < 5 &&
         <form onSubmit={HandleTagSubmit} className='addSongForm'>
           <label>
             Tags
           </label>
           <input type="text" name="tag" value={tag} onChange={e => setTag(e.target.value)} />
-
           <button type="submit">Add Tag</button>
-        </form> : <p>max tags number reached</p>}
+        </form> }
 
       {message && <p>{message}</p>}
+
       {tags.map(tag =>
         <>
           <p>{tag}</p>
-          <form onSubmit={
-
-            tag => setTagToRemove(tag)
-          }>
-            <button type="submit">x</button>
+          <form onSubmit={handleDeleteTag} >
+            <button name='tagButton' type="submit" value={tag} >x</button>
           </form>
         </>
       )}

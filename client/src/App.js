@@ -22,6 +22,7 @@ function App(props) {
     setUser(user);
   }
 
+
   function NotFound() {
 
     return (<><h1>404 - Not Found</h1>  <Link to='/'>Return home</Link></>)

@@ -12,6 +12,7 @@ import { useHistory } from "react-router";
 import MySongs from "./components/MySongs";
 import EditSong from "./components/EditSong";
 
+
 function App(props) {
 
   const [user, setUser] = useState(props.user)
@@ -28,7 +29,7 @@ function App(props) {
   return (
     <div className="App">
       <NavBar user={user} setUser={setUser} currentPage={props}></NavBar>
-      <h1>ArchiMIDIs</h1>
+      <img src='../public/images/Archimidi-logos_black.png' alt='logo'></img>
       <Switch>
         <Route exact path={PATHS.HOMEPAGE} component={SongsList} />
         <Route exact path="/songs/add"

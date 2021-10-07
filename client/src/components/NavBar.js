@@ -22,7 +22,7 @@ export default function NavBar(props) {
 
   const searchBar =
     <form className='searchBar'>
-      <input type="search" name="search" value={search} onChange={e => setSearch(e.target.value)} />
+      <input type="search" name="search" value={search} onChange={e => setSearch(e.target.value)} placeholder='  Type your search here' />
       {path !== '/' && <button onClick={handleSearch}>Search: </button>}
     </form>
 
@@ -30,23 +30,23 @@ export default function NavBar(props) {
     <nav className='navBar'>
 
       <Link to='/'>
-        <p className='navElements'>Home</p>
+        <p>Home</p>
       </Link>
 
       {searchBar}
       {props.user ? (
         <>
           <Link to="/" onClick={() => handleLogout()}>
-            <p className='navElements'>Logout</p>
+            <p>Logout</p>
           </Link>
 
           {path !== '/songs/add' &&
             <Link to='/songs/add'>
-              <p className='navElements'>Upload Song</p>
+              <p>Upload Song</p>
             </Link>}
 
           <Link to='/mysongs'>
-            <p className='navElements'>My songs</p>
+            <p>My songs</p>
           </Link>
         </>
       ) : (
@@ -56,7 +56,7 @@ export default function NavBar(props) {
 
           {path !== '/signup' && <>
             <Link to='/signup'>
-              <p className='navElements'>Sign up</p>
+              <p>Sign up</p>
             </Link>
           </>}
 
@@ -66,7 +66,7 @@ export default function NavBar(props) {
 
           {path !== '/login' &&
             <Link to='/login'>
-              <p className='navElements'>Log in</p>
+              <p>Log in</p>
             </Link>
           }
 

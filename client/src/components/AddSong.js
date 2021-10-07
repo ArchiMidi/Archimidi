@@ -108,12 +108,10 @@ function AddSong(props) {
     <div className='addSongContainer'>
       <h2>New Song</h2>
       <form onSubmit={handleSubmit} className='baseForm'>
-        <label>
-          Name
-        </label>
+        {/* <label> Name </label> */}
         <input type="text" name="title" value={title} onChange={e => setTitle(e.target.value)} placeholder='Title' />
 
-        <label>Author</label>
+        {/* <label>Author</label> */}
         <input type="text" name="author" value={author} onChange={e => setAuthor(e.target.value)} placeholder='Author' />
         <div>
           <input type="file" className='fileUpload' onChange={handleFileUpload} />
@@ -125,7 +123,7 @@ function AddSong(props) {
       {tags.length < 5 &&
         <form onSubmit={HandleTagSubmit} className='baseForm'>
           <input type="text" name="tag" value={tag} placeholder='Add tags' onChange={e => setTag(e.target.value)} />
-          <button type="submit">Add Tag</button>
+          <button type="submit">Add</button>
         </form>}
 
       {message && <p>{message}</p>}

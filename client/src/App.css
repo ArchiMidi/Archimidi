@@ -10,7 +10,50 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  background-color: rgba(26, 91, 91, 0.714);
+  background-color: crimson;
   border: 1px black solid;
-  border-radius: 2px;
+  text-decoration: none;
+  color: pink;
+}
+
+.navBar a {
+  text-decoration: none;
+  padding-left: 1em;
+  padding-right:1em;
+  text-decoration: none;
+  font-size: 1.3em;
+  color: antiquewhite;
+}
+
+.navBar a:hover {
+  color: orange;
+}
+.searchBar {
+  height: 3em;
+  flex-grow: 2;
+  display: flex;
+  align-items: space-between;;
+}
+
+.searchBar > input{
+  width:100%;
+  flex-grow: 2;
+  /* box-sizing: border-box; */
+  border: 0px;
+  font-size: 1em;
+  outline: 0;
+  padding: 4px;
+  margin-left: 0px;
+  border-left: 0px;
+  padding-left: 0px;
+}
+
+.searchBar > button{
+  border: 0px;
+  font-size: 1.3em;
+  outline: 0;
+  padding: 4px;
+  margin-left: 0px;
+  border-left: 0px;
+  padding-left: 0px;
 }

@@ -21,7 +21,6 @@ function App(props) {
     setUser(user);
   }
 
-  const redirectToLogin = () => history.push(`/login/bob`)
   // console.log('App.js user is :', user)
   // console.log('user in app.js', user)
 

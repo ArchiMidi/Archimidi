@@ -4,16 +4,12 @@ import React from 'react';
 import { useState, useEffect } from "react";
 // import the service file since we need it to send (and get) the data to(from) the server
 import service from '../api/service';
-import { Link } from "react-router-dom";
 import SongCard from "./SongCard";
-
-
-
 
 function SongsList(props) {
 
   const [allSongs, setAllSongs] = useState([]);
-  const [search, setSearch] = useState('');
+  const {search, setSearch} = props;
   const [searchFields, setSearchFields] = useState({ title: true, author: true, tags: false })
 
   const getAllSongs = () => {
@@ -35,7 +31,7 @@ function SongsList(props) {
   }, [])
 
 
-  let words = search.split(' ')
+  let words = search.split(' ') || []
 
   function searchCheck(search, word) {
     for (let i = 0; i <= word.length; i++) {
@@ -81,10 +77,12 @@ function SongsList(props) {
   // const songsList = allSongs.map(song => <div key={song._id}><h1>{song.title}</h1><a href={song.songUrl} download={`${song.title}_${song.author}.midi`}>Download</a></div>)
 
   return (<>
-    <h1>List of Songs</h1>
-    <div className="filter">
+
+    {/* <div className="filter">
+      <label>Search: </label>
       <input className='searchBar' type="search" name="search" value={search} onChange={e => setSearch(e.target.value)} />
-    </div>
+    </div> */}
+
     <label>
       Search by Title
       <input

@@ -23,20 +23,20 @@ export default function NavBar(props) {
 
   const searchBar =
     <form className='searchBar'>
-      <input type="search" name="search" value={search} onChange={e => setSearch(e.target.value)} placeholder='  Type your search here' />
-      {path !== '/' && <button onClick={handleSearch}>Search: </button>}
+      <input type="search" name="search" value={search} onChange={e => setSearch(e.target.value)} placeholder='Type your search here' />
+      {path !== '/' && <button onClick={handleSearch}> Search  </button>}
     </form>
 
   return (
     <nav className='navBar'>
-
-      <Link to='/'>
-        <p>Home</p>
-      </Link>
-
+      <div className='leftNav'>
+        <Link to='/'>
+          <p>ArchiMIDI</p>
+        </Link>
       {searchBar}
+      </div>
       {props.user ? (
-        <>
+        <div className='rightNav'>
           <Link to="/" onClick={() => handleLogout()}>
             <p>Logout</p>
           </Link>
@@ -49,9 +49,9 @@ export default function NavBar(props) {
           <Link to='/mysongs'>
             <p>My songs</p>
           </Link>
-        </>
+        </div>
       ) : (
-        <>
+        <div className='rightNav'>
 
           {path === '/login' && <p>don't have an account?</p>}
 
@@ -72,7 +72,7 @@ export default function NavBar(props) {
           }
 
           {(path !== '/signup' && path !== '/login') && <p>to upload a song </p>}
-        </>
+        </div>
       )}
     </nav>
   )

@@ -1,8 +1,27 @@
+* {
+  font-family: "Roboto Mono", monospace !important;
+}
+@media (max-width: 1080px) {
+  .rightNav {
+    width: 100%;
+  }
+  .searchBar {
+    margin-right: 1em;
+  }
+}
+
+label,
+button,
+input {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
 .App {
   text-align: center;
   background-color: azure;
   color: black;
-  font-family: "Roboto Mono", monospace;
 }
 
 .navBar {
@@ -14,46 +33,177 @@
   border: 1px black solid;
   text-decoration: none;
   color: pink;
+  flex-wrap: wrap;
 }
 
 .navBar a {
+  /* background-color: limegreen; */
   text-decoration: none;
   padding-left: 1em;
-  padding-right:1em;
-  text-decoration: none;
+  padding-right: 1em;
   font-size: 1.3em;
   color: antiquewhite;
+}
+
+.navBar p {
+  text-decoration: none;
+  padding-left: 9px;
+  padding-right: 9px;
 }
 
 .navBar a:hover {
   color: orange;
 }
+
 .searchBar {
-  height: 3em;
+  background-color: magenta;
+  /* height: 2em; */
   flex-grow: 2;
   display: flex;
-  align-items: space-between;;
+  margin-top: 0em;
+
+  /* align-items: space-between;S */
 }
 
-.searchBar > input{
-  width:100%;
+.searchBar input {
+  min-width: 250px;
+  width: 100%;
   flex-grow: 2;
+  padding: 9px 10px 9px 32px;
   /* box-sizing: border-box; */
   border: 0px;
   font-size: 1em;
-  outline: 0;
-  padding: 4px;
-  margin-left: 0px;
+  margin: 0px;
+  outline: none;
+  /* padding: 0px;
+  margin: 0px;
   border-left: 0px;
-  padding-left: 0px;
+  padding-left: 0px;  */
 }
 
-.searchBar > button{
+.searchBar button {
   border: 0px;
-  font-size: 1.3em;
+  font-size: 1em;
   outline: 0;
-  padding: 4px;
-  margin-left: 0px;
-  border-left: 0px;
-  padding-left: 0px;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+}
+
+.leftNav {
+  /* background-color: magenta; */
+  /* background-color: lime; */
+  height: 3em;
+  flex-grow: 2;
+  display: flex;
+  margin: none;
+  padding: none;
+  border: none;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rightNav {
+  height: 3em;
+  /* background-color: mediumaquamarine; */
+  min-width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* s-color: magenta; */
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: palevioletred;
+  align-items: center;
+}
+
+.baseForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: papayawhip;
+}
+
+.baseForm button {
+  padding: 9px 10px 9px 32px;
+  /* box-sizing: border-box; */
+  border: 0px;
+  font-size: 1em;
+  margin: 1em 0em 1em;
+  outline: none;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  outline: none;
+  background-color: #ededed;
+  border: solid 1px #ccc;
+  padding: 9px 10px 9px 32px;
+  /* width: 55px; */
+  
+  -webkit-border-radius: 10em;
+  -moz-border-radius: 10em;
+  border-radius: §px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  /* width: 200px; */
+  background-color: #fff;
+  border: solid 1px crimson;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.fileUpload {
+  background: peachpuff;
+  padding: 9px 10px 9px 10px;
+  margin: 1em;
+}
+
+.fileUpload:hover {
+  background: plum;
+  
+}
+
+.tagsBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tagsBox > p {
+  max-width: 100%;
+  word-wrap:break-word;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  background-color: mediumvioletred;
+  color: moccasin;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+h3 {
+  color: red;
+}
+
+h4 {
+  color: palevioletred;
+}
+
+.bottomMargin {
+  margin-bottom: 18px;
 }

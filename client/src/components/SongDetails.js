@@ -4,6 +4,7 @@ import service from '../api/service'
 import { useEffect } from 'react'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
+import SongCard from './SongCard'
 
 export default function SongDetails(props) {
     let history = useHistory()
@@ -78,10 +79,9 @@ export default function SongDetails(props) {
         <div>
             {song && (
                 <div>
-                    <h1>{song.title}</h1>
-                    <h3>{song.author}</h3>
-                    <p>{song.songUrl}</p>
-                    <a href={song.songUrl} download={`${song.title}_${song.author}.mid`}>Download</a>
+                <SongCard className='songCard' key={song._id} {...song} />
+                    
+                    
                     {(currentUserId === song.createdBy) && <button onClick={() => deleteSong(song._id)}>Delete {song.title}</button>}
 
                     {(currentUserId === song.createdBy) && <Link to={`/songs/edit/${song._id}`}><button>Edit {song.title}</button></Link>}

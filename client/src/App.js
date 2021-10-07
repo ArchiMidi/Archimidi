@@ -22,8 +22,7 @@ function App(props) {
   }
 
   const redirectToLogin = () => history.push(`/login/bob`)
-  // console.log('App.js user is :', user)
-  // console.log('user in app.js', user)
+
 
   return (
     <div className="App">
@@ -32,7 +31,7 @@ function App(props) {
       <h1>ArchiMIDIs</h1>
       <Switch>
         <Route exact path={PATHS.HOMEPAGE}
-        render={props => <SongsList search={search} setSearch={setSearch}/> } />
+          render={props => <SongsList search={search} setSearch={setSearch} />} />
         <Route exact path="/songs/add"
           render={user ? props => <AddSong user={user} setUser={setUser} /> : props => <Login setUser={addUser}{...props} />
           } />

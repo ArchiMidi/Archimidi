@@ -58,14 +58,14 @@ export default function SongDetails(props) {
             body:
                 <>
                     <section id="player2">
-                        <midi-visualizer
-                            type="piano-roll"
-                            src={song.songUrl}>
-                        </midi-visualizer>
                         <midi-player
                             src={song.songUrl}
                             visualizer="#player2 midi-visualizer">
                         </midi-player>
+                        <midi-visualizer
+                            type="piano-roll"
+                            src={song.songUrl}>
+                        </midi-visualizer>
                     </section>
 
                 </>

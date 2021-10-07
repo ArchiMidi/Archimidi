@@ -1,0 +1,233 @@
+.App {
+  text-align: center;
+  background-color: azure;
+  /* font-size: large; */
+  font-family: "Roboto Mono", monospace;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  background-color: rgba(26, 91, 91, 0.714);
+  border: 1px black solid;
+  border-radius: 2px;
+}
+
+.navElements {
+  padding-left: 1em;
+  padding-right:1em;
+  text-decoration: none;
+  font-size: 20px;
+  color: antiquewhite;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(46, 99, 145);
+}
+a:hover {
+  color: rgb(0, 111, 111);
+}
+
+.searchBar {
+  /* border: 1px solid rgb(164, 164, 164);
+  border-radius: 5px;
+  height: 2em;
+  padding: 2px 23px 2px 30px;
+  outline: 0;
+  background-color: #f5f5f5;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em; */
+  flex-grow: 2;
+}
+
+/* input {
+  outline: none;
+} */
+/* 
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  font-family: inherit;
+  font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+  display: none;
+}
+
+input[type="search"] {
+  background: #ededed
+    url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat
+    9px center;
+  border: solid 1px #ccc;
+  padding: 9px 10px 9px 32px;
+  /* width: 55px; */
+
+  -webkit-border-radius: 10em;
+  -moz-border-radius: 10em;
+  border-radius: 2px;
+
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+input[type="search"]:focus {
+  /* width: 200px; */
+  background-color: #fff;
+  border-color: #66ccca;
+  /* 	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5); */
+}
+
+input:-moz-placeholder {
+  color: #999;
+}
+input::-webkit-input-placeholder {
+  color: #999;
+}
+
+/* here begins signup and login input styling*/
+
+input[type="text"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  font-family: inherit;
+  font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+  display: none;
+}
+
+input[type="text"] {
+  background-color: #ededed;
+  border: solid 1px #ccc;
+  padding: 9px 10px 9px 32px;
+  /* width: 55px; */
+
+  -webkit-border-radius: 10em;
+  -moz-border-radius: 10em;
+  border-radius: 2px;
+
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+input[type="text"]:focus {
+  /* width: 200px; */
+  background-color: #fff;
+  border-color: #66ccca;
+  /* 	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5); */
+}
+
+input[type="password"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  font-family: inherit;
+  font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+  display: none;
+}
+
+input[type="password"] {
+  border: solid 1px #ccc;
+  padding: 9px 10px 9px 32px;
+  /* width: 55px; */
+
+  -webkit-border-radius: 10em;
+  -moz-border-radius: 10em;
+  border-radius: 2px;
+
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+input[type="password"]:focus {
+  /* width: 200px; */
+  background-color: #fff;
+  border-color: #66ccca;
+  /* 	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5); */
+} */
+
+.Link {
+  text-decoration: none;
+  color: black;
+}
+
+.songCard {
+  background-color: rgb(255, 240, 255);
+  color: black;
+  margin: 2em;
+  min-width: 300px;
+  width: 70%;
+  padding: 2em;
+  border: 0.5px black solid;
+  /* border-radius: 3px; */
+  height: fit-content;
+  line-height: 1em;
+  align-self: center;
+}
+
+.songsListContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button:hover {
+  background-color: lightgray;
+  border-color: crimson;
+}
+
+button {
+  width: 100px;
+  height: 50px;
+  border-radius: 2px;
+}
+
+.baseForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.addSongContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.baseInput {
+  border: 1px black solid;
+  background-color: rgb(210, 210, 210);
+  margin-bottom: 20px;
+}
+
+.baseInput button {
+  width: 200px;
+  margin-bottom: 20px;
+}

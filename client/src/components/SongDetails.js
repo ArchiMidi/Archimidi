@@ -3,6 +3,7 @@ import { useState } from 'react'
 import service from '../api/service'
 import { useEffect } from 'react'
 import { useHistory } from 'react-router'
+import { Link } from 'react-router-dom'
 
 export default function SongDetails(props) {
     let history = useHistory()
@@ -24,13 +25,13 @@ export default function SongDetails(props) {
         } catch (err) {
             return console.log(err)
         }
+
     }
 
     const retrieveSong = async (id) => {
         try {
             const response = await service
                 .getSong(id)
-            // console.log('song retrieved:', response)
             setSong(response)
         } catch (err) {
             return console.log(err)
@@ -81,6 +82,9 @@ export default function SongDetails(props) {
                     <p>{song.songUrl}</p>
                     <a href={song.songUrl} download={`${song.title}_${song.author}.mid`}>Download</a>
                     {(currentUserId === song.createdBy) && <button onClick={() => deleteSong(song._id)}>Delete {song.title}</button>}
+
+                    {(currentUserId === song.createdBy) && <Link to={`/songs/edit/${song._id}`}><button>Edit {song.title}</button></Link>}
+
                     {(midiPlayer.body !== null) ? <div>{midiPlayer.body}</div> : <p>nothing to play</p>}
                 </div>)}
         </div>

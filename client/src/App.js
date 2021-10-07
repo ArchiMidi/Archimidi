@@ -10,6 +10,8 @@ import { useState } from 'react'
 import Login from "./components/Login";
 import { useHistory } from "react-router";
 import MySongs from "./components/MySongs";
+import EditSong from "./components/EditSong";
+
 
 function App(props) {
   const [search, setSearch] = useState(props.search);
@@ -25,6 +27,7 @@ function App(props) {
 
   return (
     <div className="App">
+
       <NavBar user={user} setUser={setUser} search={search} setSearch={setSearch} currentPage={props}></NavBar>
       <h1>ArchiMIDIs</h1>
       <Switch>
@@ -43,6 +46,7 @@ function App(props) {
           render={props => <Login setUser={addUser}{...props} />} />
         <Route exact path="/mysongs"
           render={props => <MySongs user={user} setUser={setUser} />} />
+        <Route exact path="/songs/edit/:id" component={EditSong} />
       </Switch>
     </div>
   );

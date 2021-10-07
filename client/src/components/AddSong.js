@@ -57,7 +57,7 @@ function AddSong(props) {
 
   const saveButton = <button type="submit">Save new song</button>
   const loadIcon = <p>Loading</p>
-  const waitingIcon = <p>upload your file</p>
+  const waitingIcon = <p>Upload your file</p>
 
 
   const HandleTagSubmit = e => {
@@ -80,7 +80,7 @@ function AddSong(props) {
   }
 
   useEffect(() => {
-    
+
     (tagToRemove !== null &&
       setTags([...tags].filter(tagChecked => tagChecked !== tagToRemove))
     )
@@ -90,36 +90,38 @@ function AddSong(props) {
   }, [tags, tagToRemove])
 
   return (
-    <div>
+    <div className='addSongContainer'>
       <h2>New Song</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='addSongForm'>
         <label>
           Name
-          <input type="text" name="title" value={title} onChange={e => setTitle(e.target.value)} />
         </label>
+        <input type="text" name="title" value={title} onChange={e => setTitle(e.target.value)} />
 
         <label>Author</label>
-        <textarea type="text" name="author" value={author} onChange={e => setAuthor(e.target.value)} />
-
-        <input type="file" onChange={handleFileUpload} />
-        <div>{uploadStage > 1 ? saveButton : uploadStage > 0 ? loadIcon : waitingIcon}</div>
+        <input type="text" name="author" value={author} onChange={e => setAuthor(e.target.value)} />
+        <div className='uploadFileInput'>
+          <input type="file" onChange={handleFileUpload} />
+          <div>{uploadStage > 1 ? saveButton : uploadStage > 0 ? loadIcon : waitingIcon}</div>
+        </div>
       </form>
 
       {tags.length < 5 ?
-      <form onSubmit={HandleTagSubmit}>
-        <label>
-          Tags
+        <form onSubmit={HandleTagSubmit} className='addSongForm'>
+          <label>
+            Tags
+          </label>
           <input type="text" name="tag" value={tag} onChange={e => setTag(e.target.value)} />
-        </label>
-        <button type="submit">Add Tag</button>
-      </form> : <p>max tags number reached</p>}
+
+          <button type="submit">Add Tag</button>
+        </form> : <p>max tags number reached</p>}
 
       {message && <p>{message}</p>}
       {tags.map(tag =>
         <>
           <p>{tag}</p>
           <form onSubmit={
-            
+
             tag => setTagToRemove(tag)
           }>
             <button type="submit">x</button>

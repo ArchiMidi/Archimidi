@@ -32,18 +32,21 @@ export default function MySongs(props) {
     //comment
 
     return (
-        <div className='songsListContainer'>
+        <>
             <h3>My Songs</h3>
-            {filteredSongs.length >= 1 ? (
-                <>
-                    {filteredSongs.map(song => <SongCard key={song._id} {...song} />)}
-                </>
-            ) : (
+            <div className='songsListContainer'>
 
-                <>
-                    <h1>You haven't uploaded any songs yet</h1>
-                </>
-            )}
-        </div>
+                {filteredSongs.length >= 1 ? (
+                    <>
+                        {filteredSongs.map(song => <SongCard key={song._id} {...song} />)}
+                    </>
+                ) : (
+
+                    <>
+                        <h1>You haven't uploaded any songs yet</h1>
+                    </>
+                )}
+            </div>
+        </>
     )
 }

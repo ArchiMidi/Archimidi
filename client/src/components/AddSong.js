@@ -107,7 +107,7 @@ function AddSong(props) {
 
 
   return (
-    <div>
+    <div className='secondaryContainer'>
       <h2>New Song</h2>
       <form onSubmit={handleSubmit} className='baseForm'>
         {/* <label> Name </label> */}

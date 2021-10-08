@@ -34,7 +34,7 @@ export default function Signup(props) {
 
     }
     return (
-        <div>
+        <div className='secondaryContainer'>
             <h3>Sign up</h3>
             <form onSubmit={handleSubmit} className='baseForm'>
                 <label htmlFor="username">Username: </label>

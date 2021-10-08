@@ -38,9 +38,9 @@ export default function EditSong(props) {
     }
 
     return (
-        <div>
+        <div className='secondaryContainer'>
             <h3>Edit song</h3>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='baseForm'>
                 <label htmlFor="title">Title: </label>
                 <input
                     type="text"

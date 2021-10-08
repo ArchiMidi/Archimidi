@@ -76,16 +76,16 @@ export default function SongDetails(props) {
 
 
     return (
-        <div>
+        <div className='secondaryContainer'>
             {song && (
-                <div>
+                <div className='baseForm'>
                 <SongCard className='songCard' key={song._id} {...song} />
                     
-                    
+                    <div >
                     {(currentUserId === song.createdBy) && <button onClick={() => deleteSong(song._id)}>Delete {song.title}</button>}
 
                     {(currentUserId === song.createdBy) && <Link to={`/songs/edit/${song._id}`}><button>Edit {song.title}</button></Link>}
-
+                    </div>
                     {(midiPlayer.body !== null) ? <div>{midiPlayer.body}</div> : <p>nothing to play</p>}
                 </div>)}
         </div>

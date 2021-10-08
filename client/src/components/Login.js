@@ -27,7 +27,7 @@ export default function Login(props) {
 
     }
     return (
-        <div>
+        <div className='secondaryContainer'>
             <h3>Log in</h3>
             <form onSubmit={handleSubmit} className='baseForm'>
                 <label htmlFor="username">Username: </label>
